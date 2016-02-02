@@ -1,7 +1,16 @@
-#include "iostream"
+#include "server.h"
 
 int main() {
-	using namespace std;
+	const int DEFAULT_PORT = 8080;
 
-	cout << "hello world" << endl;
+	int port = DEFAULT_PORT;
+
+	Server server( port );
+
+	std::cout << "starting server" << std::endl;
+
+
+	server.start();
+
+	std::cout << "closing server" << std::endl;
 }
