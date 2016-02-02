@@ -23,10 +23,19 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 add_subdirectory(lib)
 add_subdirectory(tools)
 
+# we may want to change the googletest release number if
+# they release a new version of google test in the future.
 include_directories(
-  ${CMAKE_SOURCE_DIR}/external/googletest/include/
-  ${CMAKE_SOURCE_DIR}/googlemock/include/
+  ${CMAKE_SOURCE_DIR}/external/googletest-release-1.7.0/include
 )
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/external/googletest-release-1.7.0/)
+
+# ${CMAKE_SOURCE_DIR}/external/googlemock/include/
+
+#enable_testing()
+#find_package(GTest REQUIRED)
+#include_directories(${GTEST_INCLUDE_DIRS})
 
 add_subdirectory(test)
 
