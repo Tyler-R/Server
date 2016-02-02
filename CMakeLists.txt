@@ -3,6 +3,9 @@ project(server)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
+# add boost as a dependency to the project
+# if boost was not installed then this will cause CMake to crash / not finish
+# TODO: make a fix for the above issue later (run the install script or print an error message).
 set(BOOST_ROOT /opt/boost)
 set(Boost_USE_STATIC_LIBS ON)
 find_package(Boost COMPONENTS system)
